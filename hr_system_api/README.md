@@ -95,6 +95,18 @@ Se ainda não possui o Docker, instale a versão compatível com seu sistema ope
     Após o início, a documentação Swagger estará disponível em: 👉 http://127.0.0.1:5000/openapi/swagger
     A interface do usuário poderá ser acessada em: * 👉 **[http://127.0.0.1:3000/](http://127.0.0.1:3000/)**
 
+    Caso queira executar somente o Back-end, através de seu Dockerfile, execute os seguintes comandos no terminal dentro da pasta `hr_system_api`:
+
+        Primeira vez, e quando fizer alterações:
+        ```bash
+        docker build -t hr_system_api .
+        docker run -p 5000:5000 hr_system_api
+        ```
+        Demais vezes:
+        ```bash
+        docker run -p 5000:5000 hr_system_api
+        ```
+
 ## 🔑 Testando Rotas Protegidas no Swagger (Avaliação Simplificada)
 
 Para evitar a complexidade de configurar o fluxo OAuth2/ROPG (que exige Client Secret), foi implementado um **Token de Demonstração** exclusivo para testes no Swagger.
